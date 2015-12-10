@@ -1,3 +1,3 @@
 print("Hello World!")
-print(1)
-print("Well done!")
+sys.stdout.write(1)
+sys.stdout.write("Well done!")
