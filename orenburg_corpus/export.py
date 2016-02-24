@@ -10,19 +10,7 @@ from settings import RESULT_DIR
 mystem = Mystem()
 
 
-def get_path(date, title, extension, version):
-    """Возвращает путь до файла, в зависимости от входных данных.
-
-    Args:
-        date (datetime.date)
-        title (str)
-        extension (str): расширение файла без точки (txt, html, xml, etc.)
-        version (Optional[str]): версия. К примеру: lemm_text, original_text
-
-    Returns:
-        str: /tmp/orenburg/2015/04/10042015_poliot-navstrechu-pobede_orig.txt
-
-    """
+def get_path(date, title, extension, version):#путь к файлу
     # без расширения для облегчённой обрезки
     filename = "%(day)d%(month)d%(year)d_%(title)s" % {
         'day': date.day,
@@ -39,10 +27,6 @@ def get_path(date, title, extension, version):
         filename
     )
 
-    # длина пути в большинстве FS ограничена 255 символами. Наше имя файла
-    # генерируется без расширения, чтобы было легче обрезать, в итоге
-    # мы должны обрезать путь до файла до 255 символов минус количество
-    # символов в расширении минус 1 (точка между именем файла и расширением)
     path = path[:255 - len(extension) - 1].strip('-')
 
     # добавляем расширение
@@ -51,17 +35,7 @@ def get_path(date, title, extension, version):
     return path
 
 
-def save(data, path):
-    """ Сохраняет данные. При необходимости рекурсивно создаёт директории.
-
-    Args:
-        data (unicode): информация, которую следует сохранить
-        path (unicode): абсолютный путь до файла
-
-    Returns:
-        None
-
-    """
+def save(data, path):#для сохранения данных в директориях
     dirname = os.path.dirname(path)
     if not os.path.exists(dirname):
         os.makedirs(dirname)
@@ -70,29 +44,7 @@ def save(data, path):
         f.write(data)
 
 
-def get_original_text(text, title, date, url, author='', topic=''):
-    """Приводим текст к нужному виду:
-
-    @au имя автора (если автора нет, пишем Noname)
-    @ti Название статьи
-    @da дата в формате 12.02.2012
-    @topic категория, если мы её можем найти на странице со статьёй
-    @url URL, откуда мы скачали страницу
-
-    ==Текст==
-
-    Args:
-        text (unicode)
-        title (unicode)
-        date (datetime.date)
-        url (unicode): откуда мы скачали страницу
-        author (Optional[unicode])
-        topic (Optional[unicode]): категория
-
-    Returns:
-        str: текст в нужном виде
-
-    """
+def get_original_text(text, title, date, url, author='', topic=''):#добавляем теги в статьи (@au,@ti, @da, @topic, @url)
     pre = ("@au %(author)s\n"
            "@ti %(title)s\n"
            "@da %(date)s\n"
@@ -112,18 +64,7 @@ def get_original_text(text, title, date, url, author='', topic=''):
     return "%s\n\n%s" % (pre, text.strip())
 
 
-def lemmatisation(input_file, output_file, output_format='text'):
-    """Лемматизация и экспорт результата.
-
-    Args:
-        input_file (unicode): путь до файла с текстом, который нужно лемматизировать
-        output_file (unicode): путь до файла с результатом лемматизации
-        output_format (unicode): text, xml или json
-
-    Returns:
-        None
-
-    """
+def lemmatisation(input_file, output_file, output_format='text'): #лемматизация
     # для текстового формата используем pymystem3
     if output_format == 'text':
         with open(input_file, 'r') as fr:

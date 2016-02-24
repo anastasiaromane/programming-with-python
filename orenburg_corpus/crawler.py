@@ -12,10 +12,7 @@ report = Report()
 chars_counter = 0
 visited_links_file = open(VISITED_LINKS, 'r+')
 visited_links = list(map(str.strip, visited_links_file.readlines()))
-parse_stat = {
-    "cat": 0,
-    "articles": 0
-}
+
 headers = {
     'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/47.0.2526.111 Safari/537.36',
     'Accept-Encoding': 'deflate',
@@ -23,36 +20,8 @@ headers = {
 }
 
 
-def progress(phase):
-    """Пишет в stdout текущий прогресс
-    Args:
-        phase (unicode): текущая фаза парсинга cat или articles
-
-    Returns:
-        None
-
-    """
-    global parse_stat
-    parse_stat[phase] += 1
-
-    sys.stdout.write(
-        "Собрано ссылок на выпуски: %(cat)d шт., "
-        "Обработано статей: %(articles_count)d шт.\r" % {
-            'cat': parse_stat['cat'],
-            'articles_count': parse_stat['articles'],
-        }
-    )
-
 
 def str_to_date(string):
-    """Из № 6 от 10 февраля 2016  г. в datetime.date
-    Args:
-        string (unicode): дата новости в формате: Из № 6 от 10 февраля 2016  г.
-
-    Returns:
-        datetime.date
-
-    """
     m = ['января', 'февраля', 'марта', 'апреля', 'мая', 'июня', 'июля',
          'августа', 'сентября', 'октября', 'ноября', 'декабря']
 
@@ -95,12 +64,10 @@ for archive_link in archive_links:
         headers=headers
     ).content)
     list_news_links += list_news_page.xpath(xpathes['list_news_links'])
-    progress('cat')
 
 # обработка новостей
 for news_link in list_news_links:
     if news_link in visited_links:
-        progress('articles')
         continue
 
     raw_news_page = requests.get(news_link, headers=headers).content
@@ -194,7 +161,4 @@ for news_link in list_news_links:
     # добавляем данные о новости в отчёт
     report.write(orig_path, title, news_date, news_link, author)
 
-    progress('articles')
 
-print(("{:,}".format(parse_stat['articles'])))
-print(("{:,}".format(chars_counter)))
