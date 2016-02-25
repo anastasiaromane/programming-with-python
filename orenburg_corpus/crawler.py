@@ -6,13 +6,13 @@ import requests
 from lxml import html
 from settings import ARCHIVE_LINK, VISITED_LINKS
 from export import get_path, get_original_text, save, lemmatisation
-from report import Report
+import report
 
-report = Report()
+
 chars_counter = 0
 visited_links_file = open(VISITED_LINKS, 'r+')
 visited_links = list(map(str.strip, visited_links_file.readlines()))
-
+report.header()
 headers = {
     'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/47.0.2526.111 Safari/537.36',
     'Accept-Encoding': 'deflate',
@@ -80,14 +80,6 @@ for news_link in list_news_links:
         news_element = news_page.xpath(xpathes['news_element'])[0]
     except IndexError:
         # если текста новости нет
-        continue
-
-    try:
-        title = news_page.xpath(
-            '//div[@class="clauses-name-id"]'
-        )[0].text_content()
-    except IndexError:
-        # если заголовка нет
         continue
 
     try:
