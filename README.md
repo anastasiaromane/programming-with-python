@@ -1,35 +1,35 @@
 # Домашние задания по программированию
 #####HSE, Магистратура, 1 курс
 <br>
-####Amhhar_transliteration
+####Amhhar-transliteration
 Программа, которая транслитерирует тексты на амхарком языке в латиницу.
 </br>
 <br>
-####Georgian_transliteration
+####Georgian-transliteration
 Программа, которая транслитерирует тексты на грузинском языке в IPA.
 </br>
 <br>
-####Irish_forms_dictionary
+####Irish-forms-dictionary
 Программа, которая сроздает словарь форм ирландских глаголов.
 </br>
 <br>
-####VK_corpus
+####VK-corpus
 Программа, которая создает миникорпус постов из VK жителей провинциального города России
 </br>
 <br>
-####Wiki_Extractor
+####Wiki-Extractor
 Программа, которая запускает WikiExtrator для очистки текстов из Википедии от разметки xml, а также строит частотный словарь по убыванию.
 </br>
 <br>
-####chinese_parser
+####chinese-parser
 Программа, которая парсит тексты на китайском языке.
 </br>
 <br>
-####mysql_database
+####mysql-database
 Программа, которая создает базу данных orenburg на собственном сервере.
 </br>
 <br>
-####orenburg_corpus
+####orenburg-corpus
 Программа, которая скачивает страницы с сайта в разных форматах.
 </br>
 <br>
