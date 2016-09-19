@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<!-- saved from url=(0087)file:///Users/anastasiaromanova/Desktop/mine/Programming/Seminar%202%20irish/irish.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="The electronic Dictionary of the Irish Language (eDIL) is a digital dictionary of medieval Irish. It is based on the ROYAL IRISH ACADEMY’S Dictionary of the Irish Language based mainly on Old and Middle Irish materials (1913-1976) which covers the period c.700-c.1700. The current site contains revisions to c.4000 entries and further corrections and additions will be added in the coming years.">
+        <meta name="author" content="edil@qub.ac.uk">
+        <link rel="shortcut icon" type="image/x-icon" href="http://dil.ie/img/favicon.ico">
+
+        <title>eDIL - Irish Language Dictionary</title>
+
+        <link href="file:///Users/anastasiaromanova/Desktop/mine/Programming/Seminar%202%20irish/irish_files/bootstrap.min.css" rel="stylesheet">
+        <link href="file:///Users/anastasiaromanova/Desktop/mine/Programming/Seminar%202%20irish/irish_files/edil.css" rel="stylesheet">
+        <link href="file:///Users/anastasiaromanova/Desktop/mine/Programming/Seminar%202%20irish/irish_files/font-awesome.min.css" rel="stylesheet">
+
+        <script async="" src="file://www.google-analytics.com/analytics.js"></script><script async="" src="file:///Users/anastasiaromanova/Desktop/mine/Programming/Seminar%202%20irish/irish_files/analytics.js"></script><script src="file:///Users/anastasiaromanova/Desktop/mine/Programming/Seminar%202%20irish/irish_files/jquery-1.11.1.min.js"></script>
+        <script src="file:///Users/anastasiaromanova/Desktop/mine/Programming/Seminar%202%20irish/irish_files/bootstrap.min.js"></script>
+        <script src="file:///Users/anastasiaromanova/Desktop/mine/Programming/Seminar%202%20irish/irish_files/jquery.transit.min.js"></script>
+
+    </head>
+    <body>
+
+		<nav class="navbar navbar-default">
+			<div class="container">
+			<div class="row">
+			    <div class="col-xs-12">
+			        <div class="navbar-header">
+			            <a href="http://dil.ie/"><img class="navbar-logo" src="file:///Users/anastasiaromanova/Desktop/mine/Programming/Seminar%202%20irish/irish_files/logo_small.png"></a>
+			            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-menu">
+			                <span class="sr-only">Toggle navigation</span>
+			                <span class="icon-bar"></span>
+			                <span class="icon-bar"></span>
+			                <span class="icon-bar"></span>
+			            </button>
+			        </div>
+
+			        <div class="collapse navbar-collapse" id="navbar-menu">
+			            <ul class="nav nav-pills nav-justified">
+			                <li><a href="http://dil.ie/">Home</a></li>
+			                <li>
+			                    <a class="dropdown-toggle" data-toggle="dropdown" role="button" href="http://dil.ie/search?search_in=headword&amp;q=ad-gl%C3%A1dathar#">Search <span class="caret"></span></a>
+			                    <ul class="dropdown-menu" role="menu">
+			                        <li role="presentation"><a role="menuitem" tabindex="-1" href="http://dil.ie/search">Basic Search</a></li>
+			                        <li role="presentation"><a role="menuitem" tabindex="-1" href="http://dil.ie/advanced_search">Advanced Search</a></li>
+			                        
+			                    </ul>
+			                </li>
+			                <li><a href="http://dil.ie/browse">Browse</a></li>
+			                <li><a href="http://dil.ie/bibliography">Bibliography</a></li>
+			                <li><a href="http://dil.ie/search_help">Help</a></li>
+			                <li>
+			                    <a class="dropdown-toggle" data-toggle="dropdown" role="button" href="http://dil.ie/search?search_in=headword&amp;q=ad-gl%C3%A1dathar#">Archive <span class="caret"></span></a>
+			                    <ul class="dropdown-menu" role="menu">
+			                    	<li role="presentation"><a role="menuitem" tabindex="-1" href="http://dil.ie/print_edition">Print Edition</a></li>
+			                        <li role="presentation"><a role="menuitem" tabindex="-1" href="http://dil.ie/supplement">Supplement</a></li>
+			                    </ul>
+			                </li>
+			                <li><a href="http://dil.ie/about">About</a></li>
+			                <li><a href="http://dil.ie/contact">Contact</a></li>
+			            </ul>
+			        </div>
+			    </div>
+			</div>
+		</div></nav>
+
+		<div class="container" id="content">
+        	<div class="row" style="padding-bottom: 20px">
+    <form class="form-horizontal" action="http://dil.ie/search">
+    <div class="col-sm-offset-2 col-sm-8">
+      <div class="input-group">
+        <label for="q" class="sr-only">Query</label>
+          <input name="q" style="border-radius: 4px 0 0 4px" type="text" id="q" class="form-control" placeholder="Search for..." value="ad-gládathar">
+          <span style="border-left: 0" class="input-group-addon">
+            <label style="margin-bottom: 0" for="headword">
+              <input name="search_in" style="vertical-align: -2px" type="checkbox" id="headword" value="headword" checked=""> Headword Only ?
+            <label>
+          </label></label></span>
+        <span class="input-group-btn"><button class="btn btn-primary" type="submit">Go!</button></span>
+      </div>
+    </div>
+  </form>
+ 
+  <div style="float: right; padding-right: 100px">
+    <a class="social fa fa-facebook-square" href="https://www.facebook.com/eDIL-1559061804342736" style="color: #3664a2"></a>
+    <a class="social fa fa-twitter-square" href="https://twitter.com/eDIL_Dictionary" style="color: #55acee"></a>
+  </div>
+  
+</div>
+
+<style>
+  .social {
+    font-size: 35px;
+    text-decoration: none;
+  }
+  .social:hover {
+    text-decoration: none;
+  }
+</style>
+ 
+  <a name="search_results"></a>
+	<div class="row">
+		<div class="col-lg-12">
+			<h2 class="bg-primary main-header">Search Results</h2>
+		</div>
+	</div>
+	
+
+	<div class="row">
+		<div class="col-lg-12">
+			Your search returned 1 results.
+		</div>
+	</div>
+
+	<style>{ background-color: yellow }</style>
+
+	<!--?xml version="1.0"?-->
+<div class="row result"><div class="col-sm-3 result_headword"><h3 headword_id="459">
+      ad-gládathar
+    </h3><span class="citation">Cite this: eDIL s.v. 
+      ad-gládathar
+     or <a class="reference" href="http://dil.ie/459">dil.ie/459</a></span><br><p class="small">Forms:
+      	      adgládur, adgladaither, adgládathar, adgladathar, adgladadar, adngl[ad]adar, -acalladar, -acelladar, adgladamar, adgladatar, -acaltar, atatgladainn, -acáldad, -acallad, adgladmis, -acaldmis, adglaitis, atomglaide, -acaille, acall-su, acaltar, -aiciller, -acallar, -arladar, -arlasar, -árlaiter, -arlaither, -aigillter, -airlathar, -acaldam, -árladmar, -arladmar, -arlasar, -arladh, ata-gegallar, ata-gegalldathar, ata-geglathar, adrogailser, atgládastar, (ad)galas- tair, argladais, -acallastar, -agallustar, -aiclestar, -acilles- tar, ron-accaillestar, ronacc- aill, -acalt, -arlastár, arlastar, -arlassair, -arlassáir, -arlasair, adglaasmar, -arlasatar, acallam, acailsi, acallta, aigillte, acallaid, aicillid</p></div><div class="col-sm-9 result_content">
+ 
+
+  
+ 
+
+    <p class="result">
+      <span class="pos v" style="color: #ff8000">v</span> (
+        <span><strong class="pop" style="color:blue" href="bibliography/PedersenVgl.Gr." title="eDIL Bibliography">Ped.</strong></span> ii 538
+      ) strong verb (Thurn.), with <span class="mood ā-subj.">ā-subj.</span>,  
+but later with s-subj. from perf. A redupl. <span class="tns fut.">fut.</span> occurs only  
+in MU. <span class="tns Pret.">Pret.</span> and <span class="tns perf.">perf.</span> stem árlas- expld. by Thurneysen,  
+
+      
+        <span><strong class="pop" style="color:blue" href="bibliography/KZ" title="eDIL Bibliography">KZ</strong></span> xxviii 151 as
+       *ad-ro-glád-s-, but this not repeated in  
+Gramm., where p. 415 these are described as `shortened forms'.</p>
+  
+ 
+
+    <p class="result">  
+
+      <span class="mood Indic.">Indic.</span> <span class="tns pres.">pres.</span> <span class="per 1">1</span> <span class="number s.">s.</span> adgládur, 
+        <span><strong class="pop" style="color:blue" href="bibliography/Sg." title="eDIL Bibliography">Sg.</strong></span> 146b9
+      . <span class="per 2">2</span> <span class="number s.">s.</span> adgladaither,  
+
+      
+        <span><strong class="pop" style="color:blue" href="bibliography/IT" title="eDIL Bibliography">IT</strong></span> ii2 243.9
+      . <span class="per 3">3</span> <span class="number s.">s.</span> adgládathar, 
+        <span><strong class="pop" style="color:blue" href="bibliography/Sg." title="eDIL Bibliography">Sg.</strong></span> 211b11
+      . adgladathar,  
+
+      
+        <span><strong class="pop" style="color:blue" href="bibliography/Ml" title="eDIL Bibliography">Ml.</strong></span> 74a8
+        , 83a9
+        , 115d1
+        , 120b8
+        , 145c14
+      . adgladadar, 
+        115a6
+      .  
+
+      adngl[ad]adar, 
+        53c17
+      . at-nglædar 
+        Fled Bricrenn ocus Loinges Mac nDuíl Dermait 58 § 32
+      . -acalladar, 
+        <span><strong class="pop" style="color:blue" href="bibliography/IT" title="eDIL Bibliography">IT</strong></span> ii2 243.z
+      . -acelladar,  
+
+      
+        <span><strong class="pop" style="color:blue" href="bibliography/Corm.Y" title="eDIL Bibliography">Corm. Y</strong></span> 1059
+       (
+        <span><strong class="pop" style="color:blue" href="bibliography/Anecd." title="eDIL Bibliography">Anecd.</strong></span> iv 93.22
+      ). <span class="per 1">1</span> <span class="number pl.">pl.</span> adgladamar, 
+        <span><strong class="pop" style="color:blue" href="bibliography/LB" title="eDIL Bibliography">LB</strong></span>  
+
+        261b44
+      . <span class="per 3">3</span> <span class="number pl.">pl.</span> adgladatar, 
+        <span><strong class="pop" style="color:blue" href="bibliography/IT" title="eDIL Bibliography">IT</strong></span> ii2 228.22
+      . <span class="voice Pass.">Pass.</span> <span class="number sg.">sg.</span> -acaltar,  
+
+      
+        <span><strong class="pop" style="color:blue" href="bibliography/TBC" title="eDIL Bibliography">TBC</strong></span> 1694
+      .</p>
+  
+ 
+
+    <p class="result">  
+
+      <span class="mood Indic.">Indic.</span> <span class="tns impf.">impf.</span> <span class="per 1">1</span> <span class="number s.">s.</span> atatgladainn, 
+        <span><strong class="pop" style="color:blue" href="bibliography/Ml" title="eDIL Bibliography">Ml.</strong></span> 62c16
+      . <span class="per 3">3</span> <span class="number s.">s.</span> -acáldad,  
+
+      
+        <span><strong class="pop" style="color:blue" href="bibliography/Ml" title="eDIL Bibliography">Ml.</strong></span> 108b9
+      . -acallad, 
+        <span><strong class="pop" style="color:blue" href="bibliography/ACC" title="eDIL Bibliography">ACC</strong></span> § 82
+      . <span class="per 1">1</span> <span class="number pl.">pl.</span> adgladmis, -acaldmis,  
+
+      
+        <span><strong class="pop" style="color:blue" href="bibliography/Mon.Tall." title="eDIL Bibliography">Mon. Tall.</strong></span> 136.29 (§ 25)
+      . <span class="per 3">3</span> <span class="number pl.">pl.</span> adglaitis, 
+        <span><strong class="pop" style="color:blue" href="bibliography/Metr.Dinds." title="eDIL Bibliography">Met. Dinds.</strong></span> iii 
+378.13
+      .</p>
+  
+ 
+
+    <p class="result">  
+
+      <span class="mood Ipv.">Ipv.</span> <span class="per 2">2</span> <span class="number s.">s.</span> atomglaide (-glaite <span class="lbl">v.l.</span>) -acaille 
+        <span><strong class="pop" style="color:blue" href="bibliography/Corm.Y" title="eDIL Bibliography">Corm. Y</strong></span> 1059
+        
+(
+        <span><strong class="pop" style="color:blue" href="bibliography/Anecd." title="eDIL Bibliography">Anecd.</strong></span> iv 93
+      ). acall-su, 
+        <span><strong class="pop" style="color:blue" href="bibliography/TBC" title="eDIL Bibliography">TBC</strong></span> 1652
+       (aigill-si Stowe). <span class="voice Pass.">Pass.</span>  
+
+      <span class="number sg.">sg.</span> acaltar, 
+        1651
+       (aigillter, St.)</p>
+  
+ 
+
+    <p class="result">  
+
+      <span class="mood Subj.">Subj.</span> <span class="tns pres.">pres.</span> <span class="per 1">1</span> <span class="number s.">s.</span> -aiciller,  
+        <span><strong class="pop" style="color:blue" href="bibliography/Sc.M2" title="eDIL Bibliography">Sc.M²</strong></span> § 9
+      . -acallar, 
+        <span><strong class="pop" style="color:blue" href="bibliography/RC" title="eDIL Bibliography">RC</strong></span> x 218 § 6
+      .  
+
+      -arladar, 
+        <span><strong class="pop" style="color:blue" href="bibliography/Ir.Texts" title="eDIL Bibliography">Ir. Texts</strong></span> i 13 § 40
+      . -arlasar, 
+        <span><strong class="pop" style="color:blue" href="bibliography/LU" title="eDIL Bibliography">LU</strong></span> 3032
+       (see Ped.). <span class="per 2">2</span> <span class="number s.">s.</span>  
+
+      -árlaiter,  
+        <span><strong class="pop" style="color:blue" href="bibliography/BDD2" title="eDIL Bibliography">BDD²</strong></span> 200
+      . -arlaither, 
+        <span><strong class="pop" style="color:blue" href="bibliography/RC" title="eDIL Bibliography">RC</strong></span> xiv 257.14
+      . -aigillter,  
+
+      
+        <span><strong class="pop" style="color:blue" href="bibliography/ZCP" title="eDIL Bibliography">ZCP</strong></span> viii 548.3
+      . ?<span class="per 3">3</span> <span class="number s.">s.</span> (or <span class="voice pass.">pass.</span>) -airlathar, 
+        <span><strong class="pop" style="color:blue" href="bibliography/LU" title="eDIL Bibliography">LU</strong></span> 5864
+       (=  
+
+      arlathar, 
+        <span><strong class="pop" style="color:blue" href="bibliography/ZCP" title="eDIL Bibliography">ZCP</strong></span> ix 154.22
+      ). <span class="per 1">1</span> <span class="number pl.">pl.</span> -acaldam, 
+        <span><strong class="pop" style="color:blue" href="bibliography/TBFr." title="eDIL Bibliography">TBFr.</strong></span> 379
+      . -árladmar,  
+
+      
+        <span><strong class="pop" style="color:blue" href="bibliography/Wb." title="eDIL Bibliography">Wb.</strong></span> 29d10
+      . -arladmar, 
+        <span><strong class="pop" style="color:blue" href="bibliography/IT" title="eDIL Bibliography">IT</strong></span> ii2 228.5
+      . <span class="per 2">2</span> <span class="number pl.">pl.</span> -arlasar, 
+        <span><strong class="pop" style="color:blue" href="bibliography/IT" title="eDIL Bibliography">IT</strong></span> 
+
+        ii2 228.13
+       (see Ped.). <span class="mood Subj.">Subj.</span> <span class="tns impf.">impf.</span> <span class="per 3">3</span> <span class="number s.">s.</span> -arladh, 
+        <span><strong class="pop" style="color:blue" href="bibliography/Lism.L." title="eDIL Bibliography">Lism. L.</strong></span> xii 18
+      .</p>
+  
+ 
+
+    <p class="result">  
+
+      <span class="tns Fut.">Fut.</span> <span class="per 1">1</span> <span class="number s.">s.</span> 
+        ata-gegallar sa, 
+        <span><strong class="pop" style="color:blue" href="bibliography/MU2" title="eDIL Bibliography">MU²</strong></span> 975
+      . <span class="per 3">3</span> <span class="number s.">s.</span> ata-gegalldathar,  
+
+      
+        974
+      . ata-geglathar, 
+        978
+      .</p>
+  
+ 
+
+    <p class="result">  
+
+      <span class="tns Pret.">Pret.</span> and <span class="tns perf.">perf.</span> <span class="per 2">2</span> <span class="number s.">s.</span> adrogailser, 
+        <span><strong class="pop" style="color:blue" href="bibliography/IT" title="eDIL Bibliography">IT</strong></span> ii1 183.4
+      . <span class="per 3">3</span> <span class="number s.">s.</span> atgládastar,  
+
+      
+        <span><strong class="pop" style="color:blue" href="bibliography/Thes." title="eDIL Bibliography">Thes.</strong></span> ii 318.4
+       (Hy. ii). ataraglastar,  
+        <span><strong class="pop" style="color:blue" href="bibliography/BDD2" title="eDIL Bibliography">BDD²</strong></span> 544
+      . (ad)galas- 
+tair, 
+        <span><strong class="pop" style="color:blue" href="bibliography/OCl." title="eDIL Bibliography">O'Cl.</strong></span>
+       argladais,  
+        <span><strong class="pop" style="color:blue" href="bibliography/TBC2" title="eDIL Bibliography">TBC²</strong></span> 1802
+      . -acallastar (-aicellestair,  
+
+      -agallustar <span class="lbl">v.l.</span>), 
+        <span><strong class="pop" style="color:blue" href="bibliography/ACC" title="eDIL Bibliography">ACC</strong></span> § 123
+      . -aiclestar, 
+        <span><strong class="pop" style="color:blue" href="bibliography/Corm.Y" title="eDIL Bibliography">Corm. Y</strong></span> 825
+      . -acilles- 
+tar, 
+        <span><strong class="pop" style="color:blue" href="bibliography/LL" title="eDIL Bibliography">LL</strong></span> 14262
+      . ron-accaillestar, 
+        <span><strong class="pop" style="color:blue" href="bibliography/Imr.Brain" title="eDIL Bibliography">Im. Brain</strong></span> ii 293.16
+      . ronacc- 
+aill, 
+        294.1
+      . -acalt. 
+        <span><strong class="pop" style="color:blue" href="bibliography/RC" title="eDIL Bibliography">RC</strong></span> xi 442.9
+      . -arlastár, 
+        <span><strong class="pop" style="color:blue" href="bibliography/LU" title="eDIL Bibliography">LU</strong></span> 8269
+       (
+        <span><strong class="pop" style="color:blue" href="bibliography/FB" title="eDIL Bibliography">FB</strong></span> § 21
+      ).  
+
+      arlastar, 
+        5873
+       (TBC). ro arlastar, 
+        <span><strong class="pop" style="color:blue" href="bibliography/Metr.Dinds." title="eDIL Bibliography">Met. Dinds.</strong></span> iii 210.10
+      .  
+
+      -arlassair 
+        <span><strong class="pop" style="color:blue" href="bibliography/SR" title="eDIL Bibliography">SR</strong></span> 3791
+      . -arlassáir, 
+        4791
+      . -arlasair, 
+        <span><strong class="pop" style="color:blue" href="bibliography/LU" title="eDIL Bibliography">LU</strong></span> 9306
+      .  
+
+      <span class="per 1">1</span> <span class="number pl.">pl.</span> adglaasmar, 
+        <span><strong class="pop" style="color:blue" href="bibliography/IT" title="eDIL Bibliography">IT</strong></span> ii2 228.49
+      . <span class="per 3">3</span> <span class="number pl.">pl.</span> -arlasatar, 
+        <span><strong class="pop" style="color:blue" href="bibliography/RC" title="eDIL Bibliography">RC</strong></span> vi 164.7
+      .</p>
+  
+ 
+
+    <p class="result">  
+
+      <span class="pos Vn." style="color: #ff8000">Vn.</span> acallam. 
+        <span><strong class="pop" style="color:blue" href="bibliography/IGT" title="eDIL Bibliography">IGT</strong></span> Verbs § 65
+      .</p>
+  
+ 
+
+    <p class="result">  
+
+      <span class="pos Part." style="color: #ff8000">Part.</span> acailsi (<span class="number pl.">pl.</span>), 
+        <span><strong class="pop" style="color:blue" href="bibliography/Ml" title="eDIL Bibliography">Ml.</strong></span> 48a10
+      .</p>
+  
+ 
+
+    <p class="result">  
+
+      <span class="pos Verbal-of-Necess." style="color: #ff8000">Verbal of Necess.</span> acallta, 
+        <span><strong class="pop" style="color:blue" href="bibliography/ZCP" title="eDIL Bibliography">ZCP</strong></span> iii 29.37
+      . ?aigillte, 
+        <span><strong class="pop" style="color:blue" href="bibliography/DDána" title="eDIL Bibliography">DDána</strong></span>   
+
+        74.16
+      .</p>
+  
+ 
+
+    <p class="result">  
+Later as simple vb. acallaid, aicillid.</p>
+  
+ 
+
+    <p class="result">  
+
+      <span class="trans">
+        <span class="def">Addresses</span>, <span class="def">speaks</span> to, <span class="def">converses</span> with:</span> adagladastar gillae  
+
+      <span class="ediltr">a boy spoke to them</span>, 
+        <span><strong class="pop" style="color:blue" href="bibliography/Corm.Y" title="eDIL Bibliography">Corm. Y</strong></span> 1059
+       (
+        <span><strong class="pop" style="color:blue" href="bibliography/Anecd." title="eDIL Bibliography">Anecd.</strong></span> iv 91.9
+      ). adglad- 
+adar Brigit i[n] noidin, 
+        <span><strong class="pop" style="color:blue" href="bibliography/Ir.Texts" title="eDIL Bibliography">Ir. Texts</strong></span> i 14 § 42
+      . adglád[ad]ar 
+Fróech Meidb <span class="ediltr">F. addresses M.</span>, 
+        <span><strong class="pop" style="color:blue" href="bibliography/TBFr." title="eDIL Bibliography">TBFr.</strong></span> 130
+      . ni acaltar tarais 
+nach thar adart `<span class="quote">no conversation is held across him</span>', 
+        <span><strong class="pop" style="color:blue" href="bibliography/Ériu" title="eDIL Bibliography">Ériu</strong></span>  
+
+        xii 48 § 61
+      . boí Cuchulainn i n-a thost ┐ ni arlasair Loegaire,  
+
+      
+        <span><strong class="pop" style="color:blue" href="bibliography/LU" title="eDIL Bibliography">LU</strong></span> 9306
+       (TBC). roaicellastar iarum for leith na seanchaidi
+
+      <span class="ediltr">he addressed the shanachies apart</span>, 
+        <span><strong class="pop" style="color:blue" href="bibliography/Ériu" title="eDIL Bibliography">Ériu</strong></span> iv 144.15
+      . do agaillsit 
+a charaid . . . o Fhrōech . . . imthecht lais la tochmarc mhnā 
+dó <span class="ediltr">were requested by F.</span>, 
+        <span><strong class="pop" style="color:blue" href="bibliography/ZCP" title="eDIL Bibliography">ZCP</strong></span> xiii 169.32
+      . notaicél <span class="ediltr">I shall 
+talk with thee</span>, 
+        <span><strong class="pop" style="color:blue" href="bibliography/Ériu" title="eDIL Bibliography">Ériu</strong></span> iv 100.16
+      . agoillis an Dagdae hi, 
+        <span><strong class="pop" style="color:blue" href="bibliography/RC" title="eDIL Bibliography">RC</strong></span> xii 
+84 § 84
+      . nocho ronacaill int idul, 
+        <span><strong class="pop" style="color:blue" href="bibliography/RC" title="eDIL Bibliography">RC</strong></span> xlvi 235.30
+      . iar sin 
+téighim-se go Bóinn / . . . / is aigillim Niall an áigh, 
+        <span><strong class="pop" style="color:blue" href="bibliography/Content." title="eDIL Bibliography">Content.</strong></span>  
+
+        ii 9
+      . gur aguill Dia na daoine / cia aguinn dob iontaoibhe, 
+        <span><strong class="pop" style="color:blue" href="bibliography/DánDé" title="eDIL Bibliography">Dán 
+Dé</strong></span> xxviii 4
+      . cuich aiccille? <span class="ediltr">whom are you speaking to</span>?, 
+        <span><strong class="pop" style="color:blue" href="bibliography/BNnÉ" title="eDIL Bibliography">BNnÉ</strong></span> 
+
+        62  § 86
+      . i Scoitbhéarla do agaill Ióth ┐ Tuatha Dé Danann a 
+chéile, 
+        <span><strong class="pop" style="color:blue" href="bibliography/Keat." title="eDIL Bibliography">Keat.</strong></span> ii 819
+      . Bérla na filed asa n-aicilled cach dib 
+araile, 
+        <span><strong class="pop" style="color:blue" href="bibliography/Arch." title="eDIL Bibliography">Arch.</strong></span> iii 247.21
+      . ros-aigletar in ingen go hoirbidnech
+
+      <span class="ediltr">saluted</span>, 
+        <span><strong class="pop" style="color:blue" href="bibliography/Caithr.Thoirdh." title="eDIL Bibliography">Caithr. Thoirdh.</strong></span> 27.5
+      . ni aiclidh somh diabal dogres,  
+
+      
+        <span><strong class="pop" style="color:blue" href="bibliography/BNnÉ" title="eDIL Bibliography">BNnÉ</strong></span> 321 § 26
+      . aigill Sir Gyi damh d'faghail cairti `<span class="quote">ask Sir 
+G. for me</span>', 
+        <span><strong class="pop" style="color:blue" href="bibliography/ZCP" title="eDIL Bibliography">ZCP</strong></span> vi 78.1
+      . With FRI: fri angel n-acallastar, 
+        <span><strong class="pop" style="color:blue" href="bibliography/LU" title="eDIL Bibliography">LU</strong></span>  
+
+        1148
+       (
+        <span><strong class="pop" style="color:blue" href="bibliography/ACC" title="eDIL Bibliography">ACC</strong></span> 123
+      ). ait a fuil gunarlaither ris <span class="ediltr">where you may 
+speak to him</span>, 
+        <span><strong class="pop" style="color:blue" href="bibliography/RC" title="eDIL Bibliography">RC</strong></span> xiv 257 § 14
+      .</p>
+   </div></div><div class="row result spacer"><div class="col-sm-12"> </div></div>
+
+
+	
+
+	<script>
+
+	  $(document).ready( function() {
+
+	  	$('div.load_more').on('click', function() {
+          var start = $(this).data('start');
+          $('#more-loader').show();
+          $.ajax({
+            context: this,  // set the context of the callbacks
+            type: "GET",
+            url: "http://dil.ie/search?q=ad-gl%C3%A1dathar&search_in=headword&start="+start,
+            success: function(data) {
+              //console.log("http://dil.ie/search?q=ad-gl%C3%A1dathar&search_in=headword&start="+start);
+              $(this).before(data);
+              $('#more-loader').hide();
+              if (start+20 > $(this).data('max')) {
+              	$(this).hide();
+              }
+              else {
+              	$(this).data('start', start+20);
+              }
+            }
+          });
+        });
+	  });
+
+	</script>
+
+	<script>
+
+	  $(document).ready( function() {
+
+	  	$('#content').on('click', '.pop', function() {
+	  		$.ajax({
+	            context: this,  // set the context of the callbacks
+	            type: "GET",
+	            url:  $(this).attr('href'),
+	            success: function(data) {
+	            	$(this).popover({
+	            		placement: function (context, source) {
+					        var position = $(source).position();
+					        if (position.left > 515) {
+					            return "left";
+					        }
+					        if (position.left < 515) {
+					            return "right";
+					        }
+					        if (position.top < 110){
+					            return "bottom";
+					        }
+					        return "top";
+						},
+				        content: data,
+				        title: 'Bibliography',
+				        html: true,
+	            	}).popover('show');
+	            }
+        	});
+	  	});
+
+		$('body').on('click', function (e) {
+            $('.pop').each(function () {
+                //the 'is' for buttons that trigger popups
+                //the 'has' for icons within a button that triggers a popup
+                if (!$(this).is(e.target) && $(this).has(e.target).length === 0 && $('.popover').has(e.target).length === 0) {
+                    $(this).popover('destroy');
+                }
+            });
+        });
+	  })
+</script>
+    	</div>
+
+        <footer class="footer hidden-sm hidden-xs">
+          <div class="container">
+            <p class="text-center">
+            <img style="padding-left: 10px;padding-top:5px;" src="file:///Users/anastasiaromanova/Desktop/mine/Programming/Seminar%202%20irish/irish_files/AHRC.png">
+            <img style="padding-left: 10px;padding-top:5px;" src="file:///Users/anastasiaromanova/Desktop/mine/Programming/Seminar%202%20irish/irish_files/RIA.png">
+            <img style="padding-left: 10px;padding-top:5px;" src="file:///Users/anastasiaromanova/Desktop/mine/Programming/Seminar%202%20irish/irish_files/CAM.png">
+            <img style="padding-left: 10px;padding-top:5px;" src="file:///Users/anastasiaromanova/Desktop/mine/Programming/Seminar%202%20irish/irish_files/QUB.png">
+            </p>
+          </div>
+        </footer>
+        
+		<script>
+		  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+		  ga('create', 'UA-70268246-1', 'auto');
+		  ga('send', 'pageview');
+
+		</script>
+    
+</body></html>
